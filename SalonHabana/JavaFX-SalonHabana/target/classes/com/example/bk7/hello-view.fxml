@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="checkRectangular" maxHeight="677.0" maxWidth="276.0" minHeight="626.0" minWidth="276.0" prefHeight="649.0" prefWidth="389.0" style="-fx-background-color: linear-gradient(to bottom, #000080, #000000);;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bk7.HelloController">
+   <children>
+      <TextField fx:id="Nombre" layoutX="31.0" layoutY="160.0" onMouseClicked="#restartNombreText" prefHeight="25.0" prefWidth="205.0" promptText="Ej. Rosa Melano" style="-fx-border-radius: 50%;">
+         <tooltip>
+            <Tooltip text="Empty Tooltip" />
+         </tooltip></TextField>
+      <Label layoutX="31.0" layoutY="139.0" text="🤵Nombre" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <TextField fx:id="TelefonoLabel" accessibleHelp="Introduzca un numero español debe comenzar por 9 o 6 y no debe coneterner mas de 9 digitos" layoutX="31.0" layoutY="218.0" onMouseClicked="#restartNumTextField" prefHeight="25.0" prefWidth="205.0" promptText="Ej. 600333XXX" />
+      <Label layoutX="29.0" layoutY="194.0" text="📱 Telefono " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="31.0" layoutY="250.0" prefHeight="25.0" prefWidth="126.0" text="📅 Fecha evento " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="31.0" layoutY="320.0" prefHeight="25.0" prefWidth="168.0" text="Numero de personas:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <TextField fx:id="nPersonas" alignment="CENTER" layoutX="196.0" layoutY="320.0" onMouseClicked="#restartNumPersonas" prefHeight="25.0" prefWidth="38.0" promptText="1">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <tooltip>
+            <Tooltip text="Maximo 100 personas" />
+         </tooltip></TextField>
+      <DatePicker fx:id="fecha" editable="false" layoutX="30.0" layoutY="275.0" onAction="#restartCalendar" onMouseClicked="#restartCalendar" prefHeight="25.0" prefWidth="205.0" promptText="11/09/2001" />
+      <ComboBox fx:id="CCarta" layoutX="30.0" layoutY="366.0" onMouseClicked="#restartnCCarta" prefHeight="25.0" prefWidth="205.0" promptText="Tipo de carta" />
+      <Button fx:id="enviarButton" layoutX="27.0" layoutY="579.0" mnemonicParsing="false" onAction="#enviar" prefHeight="38.0" prefWidth="205.0" text="Reservar" />
+      <ComboBox fx:id="CEvento" layoutX="30.0" layoutY="409.0" onAction="#onChangeEventoCombo" onMouseClicked="#restartlugarevento" prefHeight="25.0" prefWidth="205.0" promptText="Lugar del evento" />
+      <Label fx:id="NJornadas" layoutX="27.0" layoutY="446.0" prefHeight="26.0" prefWidth="205.0" text="Numero de jornadas:" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nJorandasText" layoutX="204.0" layoutY="447.0" onMouseClicked="#restartnJorandasText" prefHeight="17.0" prefWidth="30.0" promptText="1" />
+      <Label fx:id="habitaciones" layoutX="27.0" layoutY="478.0" prefHeight="17.0" prefWidth="205.0" text="¿Requiere habitacion?" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="19.5" />
+         </font>
+      </Label>
+      <RadioButton fx:id="checkSi" accessibleRole="CHECK_BOX" graphicTextGap="1.0" layoutX="39.0" layoutY="506.0" mnemonicParsing="false" onAction="#onChangeSi" prefHeight="60.0" prefWidth="91.0" selected="true" text="Si" textOverrun="CLIP">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="checkNo" graphicTextGap="1.0" layoutX="157.0" layoutY="503.0" mnemonicParsing="false" onAction="#onChangeNo" prefHeight="66.0" prefWidth="101.0" text="No">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </RadioButton>
+      <Label fx:id="labelMesas" layoutX="27.0" layoutY="445.0" prefHeight="28.0" prefWidth="213.0" text="¿Que tipo de mesa desea?" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="checkRedonda" layoutX="31.0" layoutY="473.0" mnemonicParsing="false" onAction="#onChangeMesaRed" prefHeight="38.0" prefWidth="205.0" selected="true" text="Redonda " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="checkRectangular1" layoutX="30.0" layoutY="511.0" mnemonicParsing="false" onAction="#onChangeMesaRect" prefHeight="38.0" prefWidth="205.0" text="Rectangular " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </RadioButton>
+      <ImageView fitHeight="124.0" fitWidth="290.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/SalonPNGGris.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="NumNoEncontrado" layoutX="121.0" layoutY="198.0" prefHeight="17.0" prefWidth="136.0" text="(Numero no encontrado)" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="NombreNotFound" layoutX="115.0" layoutY="144.0" text="(solo caracteres de la a-z)" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
